@@ -1,0 +1,11 @@
+const $ = (selector, byId = true) => byId ? document.getElementById(selector) : document.querySelector(selector);
+const $$ = selector => document.querySelectorAll(selector);
+const value = (selector, byId = true) => $(selector, byId).value;
+const checked = (selector, byId = true) => $(selector, byId).checked;
+const disable = (selector, byId = true) => $(selector, byId).disabled = true;
+const enable = (selector, byId = true) => $(selector, byId).disabled = false;
+const addClass = (selector, byId = true, ...className) => $(selector, byId).classList.add(...className);
+const removeClass = (selector, byId = true, ...className) => $(selector, byId).classList.remove(...className);
+const hide = (selector, byId = true) => addClass(selector, byId, 'hidden');
+const show = (selector, byId = true) => removeClass(selector, byId, 'hidden');
+const content = (selector, content = '', html = false, byId = true) => html ? $(selector, byId).innerHTML = content : $(selector, byId).textContent = content;
